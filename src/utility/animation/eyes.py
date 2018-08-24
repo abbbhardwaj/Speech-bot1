@@ -17,7 +17,6 @@ class EYE:
                 img = Image(Point(250, 250), i)
                 img.draw(win)
                 time.sleep(.2)
-        time.sleep(20)
         win.getMouse()
         win.close()
 

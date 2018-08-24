@@ -1,6 +1,10 @@
 import math
 import speech_recognition as sr
 import playsound
+from utility.AI.RomanToIntConvertor import *
+import roman
+from testVocab import run_time_text
+
 
 operation = ""
 
@@ -8,10 +12,13 @@ operation = ""
 def get_numbers():
     playsound.playsound('utility/AI/AI-sounds/calc.mp3', True)
     playsound.playsound('utility/AI/AI-sounds/operation.mp3', True)
-    getting_numbers()
+    operation = getting_numbers()
     if "addition" in operation or "add" in operation or "Add" in operation:
-        first_number()
-        # print(first_number() + sec_number())
+        number1 = int(3)
+        number2 = int(4)
+        number3 = number1 + number2
+        playsound.playsound(run_time_text(str(number3)), True)
+        print(number3)
 
 
 def getting_numbers():
@@ -27,7 +34,8 @@ def getting_numbers():
         try:
             text = r.recognize_google(audio1)
             print("You mean: " + text)
-            operation = str(text)
+            operation = text
+            print(operation)
             return operation
         except sr.UnknownValueError:
             print("Joanna could not understand what you mean")
@@ -38,13 +46,19 @@ def getting_numbers():
 
 def first_number():
     playsound.playsound('utility/AI/AI-sounds/first-number.mp3', True)
-    getting_numbers()
-    frst = int(operation)
-    return frst
+    if getting_numbers() != "":
+        return getting_numbers()
+    else:
+        playsound.playsound('utility/AI/AI-sounds/first-number.mp3', True)
+        return getting_numbers()
 
 
 def sec_number():
     playsound.playsound('utility/AI/AI-sounds/sec-number.mp3', True)
-    getting_numbers()
-    sec = int(operation)
-    return sec
+    if getting_numbers() != "":
+        return getting_numbers()
+    else:
+        playsound.playsound('utility/AI/AI-sounds/sec-number.mp3', True)
+        return getting_numbers()
+
+
