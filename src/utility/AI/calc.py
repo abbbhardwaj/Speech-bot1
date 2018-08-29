@@ -2,7 +2,6 @@ import math
 import speech_recognition as sr
 import playsound
 from utility.AI.RomanToIntConvertor import *
-import roman
 from testVocab import run_time_text
 
 

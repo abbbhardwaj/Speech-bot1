@@ -5,6 +5,7 @@ from information.aboutJoanna.joanna import about_joanna
 from utility.AI.calc import get_numbers
 from information.googleSearch import Google
 import playsound
+from maps import navigation
 
 
 def text_converter(text):
@@ -24,6 +25,8 @@ def text_converter(text):
         qa_about_us()
     elif "search" in stro or "Search" in stro or "Find" in stro or "google" in stro or "Google" in stro:
         Google.google_search(stro)
+    elif "distance" in stro or "far" in stro or "time" in stro or "kilometers" in stro or "maps" in stro:
+        navigation.google_maps()
     else:
         playsound.playsound('downloads/intro-sounds/not-understandable.mp3', True)
         # Playing the converted file

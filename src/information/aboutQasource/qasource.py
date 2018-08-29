@@ -1,7 +1,4 @@
 import playsound
-import docx
-from weather import Weather, Unit
-import speech_recognition as sr
 
 
 qasource_text = "OUR MISSION is to provide our partners with quality that creates value."
