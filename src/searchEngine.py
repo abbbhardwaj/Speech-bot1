@@ -11,6 +11,15 @@ class Search:
 
     @staticmethod
     def config():
+        print("Keywords for the faster Joanna Response")
+        print(" ")
+        print("KEYWORDS                         OPERATIONS")
+        print("--------                         ---------")
+        print("SEARCH                           google is the saviour")
+        print("FILE                             searches a file in system and Opens it")
+        print("PLAY or SONG                     Plays music")
+        print("WEATHER REPORT                   Tells the current weather of a place")
+        print(" ")
         # Sample rate is how often values are recorded
         # EYE.eyes()
         sample_rate = 48000
@@ -23,13 +32,13 @@ class Search:
         mic = sr.Microphone()
         with mic as source:
             r.adjust_for_ambient_noise(source)
-            playsound.playsound('downloads/intro-sounds/Major-Intro.mp3', True)
+            playsound.playsound('downloads/intro-sounds/Major-Intro2.mp3', True)
             # listens for the user's input
             audio = r.listen(source)
             try:
                 text = r.recognize_google(audio)
                 print("This is what you said: " + text)
-                playsound.playsound('downloads/intro-sounds/sure.mp3', True)
+                # playsound.playsound('downloads/intro-sounds/sure.mp3', True)
                 textToSpeech.text_converter(text)
                 # return text
                 # error occurs when google could not understand what was said
