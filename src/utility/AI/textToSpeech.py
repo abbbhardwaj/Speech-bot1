@@ -17,6 +17,8 @@ def text_converter(text):
         file_name = search_in_system()
         data = open(file_name, 'r+', encoding="ISO-8859-1").read()
         print(data)
+    elif "Joanna" in stro or "Joana" in stro:
+        playsound.playsound("downloads/run-time-sounds/Joanna.mp3", True)
     elif "weather" in stro:
         weather_report()
     elif "about yourself" in stro or "yourself" in stro or "you" in stro:
@@ -31,8 +33,7 @@ def text_converter(text):
         navigation.google_maps()
     else:
         playsound.playsound('downloads/intro-sounds/not-understandable.mp3', True)
-        # Playing the converted file
-        # os.system('mpg321 Mostly-Cloudy.mp3 &')
+
 
 
 

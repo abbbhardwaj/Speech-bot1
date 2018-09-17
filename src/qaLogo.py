@@ -76,3 +76,5 @@ def run_script():
     third_fig()
     turtle.done()
 
+
+# run_script()
